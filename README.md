@@ -1,2 +1,2 @@
 # projekt6
-Ez az ötödik projekt repója.
+Ez az ötödik projekt repo-ja.
