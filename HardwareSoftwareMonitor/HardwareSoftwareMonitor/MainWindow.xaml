@@ -11,15 +11,30 @@
             <TabItem Header="Hardware infó">
                 <Grid Background="#FFE5E5E5">
                     <TabControl HorizontalAlignment="Left" Height="334" Margin="10,10,0,0" VerticalAlignment="Top" Width="728">
+                        <TabItem Header="Alaplap">
+                            <Grid Background="#FFE5E5E5">
+                                <Label x:Name="MBManufacturer" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="MBProduct" Content="" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="MBSerial" Content="" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="MBSysName" Content="" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="MBbus" Content="" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
+                            </Grid>
+                        </TabItem>
                         <TabItem Header="CPU">
                             <Grid Background="#FFE5E5E5">
-                                <Label x:Name="CPUName" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="CPUID" Content="Label" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="CPUManu" Content="Label" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="CPUClock" Content="Label" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="CPUCores" Content="Label" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="CPUArch" Content="Label" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="CPUFamily" Content="Label" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="CPUName" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="CPUManu" Content="" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="CPUCores" Content="" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="CPUClock" Content="" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="CPUID" Content="" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="CPUArch" Content="" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="CPUFamily" Content="" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Memória">
+                            <Grid Background="#FFE5E5E5">
+                                <TabControl x:Name="Memory" Margin="10">
+                                </TabControl>
                             </Grid>
                         </TabItem>
                         <TabItem Header="Lemezek">
@@ -30,21 +45,21 @@
                         </TabItem>
                         <TabItem Header="GPU">
                             <Grid Background="#FFE5E5E5">
-                                <Label x:Name="GPUName" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="GPUStatus" Content="Label" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="GPUID" Content="Label" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="GPURAM" Content="Label" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="GPUDAC" Content="Label" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="GPUDriver" Content="Label" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="GPUVideoProcessor" Content="Label" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="GPUArch" Content="Label" HorizontalAlignment="Left" Margin="10,227,0,0" VerticalAlignment="Top"/>
-                                <Label x:Name="GPUMemType" Content="Label" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="GPUName" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="GPUStatus" Content="" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="GPUID" Content="" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="GPURAM" Content="" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="GPUDAC" Content="" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="GPUDriver" Content="" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="GPUVideoProcessor" Content="" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="GPUArch" Content="" HorizontalAlignment="Left" Margin="10,227,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="GPUMemType" Content="" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top"/>
                                 <Label Content="Telepített driverek:" HorizontalAlignment="Left" Margin="312,10,0,0" VerticalAlignment="Top"/>
                                 <ListBox x:Name="GPUDrivers" HorizontalAlignment="Left" Height="243" Margin="312,41,0,0" VerticalAlignment="Top" Width="400"/>
                             </Grid>
                         </TabItem>
                         <TabItem Header="Hálózati kapcsolatok">
-                            <Grid Background="#FFE5E5E5">
+                            <Grid x:Name="NetGrid" Background="#FFE5E5E5">
                                 <TabControl x:Name="NetworkConnections" Margin="10"/>
                             </Grid>
                         </TabItem>
@@ -63,11 +78,39 @@
             </TabItem>
             <TabItem Header="Operációs rendszer">
                 <Grid Background="#FFE5E5E5">
-                    <Label x:Name="OSType" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="OSWinDir" Content="Label" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="OSSerial" Content="Label" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="OSSysDir" Content="Label" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="OSVersion" Content="Label" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="OSType" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="OSWinDir" Content="" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="OSSysDir" Content="" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="OSSerial" Content="" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="OSVersion" Content="" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Driverek">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="DriverGrid" Margin="10" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="DriverFriNameColumn" Binding="{Binding DriverFriendlyName}" Header="Név"/>
+                            <DataGridTextColumn x:Name="DriverDescriptionColumn" Binding="{Binding DriverDescription}" Header="Leírás"/>
+                            <DataGridTextColumn x:Name="DriverVersionColumn" Binding="{Binding DriverVersion}" Header="Verzió"/>
+                            <DataGridTextColumn x:Name="DriverLocationColumn" Binding="{Binding DriverLocation}" Header="Driver helye"/>
+                            <DataGridTextColumn x:Name="DriverDriverName" Binding="{Binding DriverDriverName}" Header="Driver neve"/>
+                            <DataGridTextColumn x:Name="DriverManufacturerColumn" Binding="{Binding DriverManufacturer}" Header="Gyártó"/>
+                            <DataGridTextColumn x:Name="DriverProviderColumn" Binding="{Binding DriverProvider}" Header="Szolgáltató"/>
+                            <DataGridTextColumn x:Name="DriverCompatIDColumn" Binding="{Binding DriverCompatID}" Header="Kompatibilitási ID"/>
+                            <DataGridTextColumn x:Name="DriverDeviceIDColumn" Binding="{Binding DriverDeviceID}" Header="Készülék ID"/>
+                            <DataGridTextColumn x:Name="DriverInfNameColumn" Binding="{Binding DriverInfName}" Header=".inf fájl neve"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Telepített programok">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="ProgramsGrid" Margin="10" IsReadOnly="True" CanUserReorderColumns="False" CanUserResizeColumns="False" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="ProgramNameColumn" Binding="{Binding ProgramName}" Header="Program Neve" CanUserSort="True"/>
+                            <DataGridTextColumn x:Name="ProgramVersionColumn" Binding="{Binding ProgramVersion}" Header="Program Verziója" CanUserSort="False"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </TabItem>
             <TabItem Header="Hardware Állapotjelzők">
