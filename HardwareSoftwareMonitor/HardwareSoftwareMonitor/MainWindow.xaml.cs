@@ -60,6 +60,8 @@ namespace HardwareSoftwareMonitor
         PerformanceCounter processorUsage = new PerformanceCounter("Processzor", "A processzor kihasználtsága (%)", "_Total");
         PerformanceCounter availableMemory = new PerformanceCounter("Memória", "Rendelkezésre álló memória (megabájt)");
         PerformanceCounter uptime = new PerformanceCounter("Rendszer", "Rendszerindítás óta eltelt idő (s)");
+        double temperature = 0;
+        ManagementObjectSearcher temperat = new ManagementObjectSearcher(@"root\WMI", "SELECT * FROM MSAcpi_ThermalZoneTemperature");
         DispatcherTimer tick = new DispatcherTimer();
 
         public MainWindow()
@@ -348,6 +350,20 @@ namespace HardwareSoftwareMonitor
             cpu.Content = "CPU kihasználtsága: " + (int)processorUsage.NextValue() + " %";
             mem.Content = "Rendelkezésre álló memória: " + (int)availableMemory.NextValue() + " MB";
             sysup.Content = "Rendszerindítás óta eltelt idő: " + (int)uptime.NextValue() / 60 / 60 + " óra";
+
+            try
+            {
+                foreach (ManagementObject obj in temperat.Get())
+                {
+                    temperature = Convert.ToDouble(obj["CurrentTemperature"].ToString());
+                    temperature = (temperature - 2732) / 10.0;
+                }
+                temp.Content = "CPU hőmérséklete: " + temperature + "C°";
+            }
+            catch
+            {
+                temp.Content = "CPU hőmérséklete: A rendszer megtagadta a hozzáférést.";
+            }
         }
     }
 }
